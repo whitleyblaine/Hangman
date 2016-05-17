@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>Hangman</title>
-  <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
   </head>
+
   <body>
     <header>
       <h1>Hangman</h1>
     </header>
+    
+    <p>Press any key to get started!</p>
+    <p>Wins: <span id="wins">0</span></p>
+    <p>Word: <span id='currentWord'></span></p>
+    <p>Guesses Remaining: <span id="guessesRemaining"></span></p>
+    <p id='lettersGuessed'>Letters already guessed: </p>
   </body>
 </html>

@@ -1,9 +1,31 @@
 html {
   font-size: 16px;
   width: 100vw;
+  color: #fff;
+}
+
+body {
+  background-color: #000
 }
 
 header h1 {
   text-align: center;
-  size: 2em;
+  font-size: 4em;
+  margin-top: 20px;
+  text-shadow: 0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff,
+    0 0 40px #ff00de,
+    0 0 70px #ff00de,
+    0 0 80px #ff00de,
+    0 0 100px #ff00de,
+    0 0 150px #ff00de;
+  color: #fff;
 }
+
+p {
+  text-align: center;
+  margin-top: 44px;
+}
+
+
