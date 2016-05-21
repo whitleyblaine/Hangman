@@ -58,7 +58,7 @@
 
       var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-      if ((contains(letters, userGuess) == false) && (userGuess == 'a' || userGuess == 'b' || userGuess == 'c' || userGuess == 'd' || userGuess == 'e' || userGuess == 'f' || userGuess == 'g' || userGuess == 'h' || userGuess == 'i' || userGuess == 'j' || userGuess == 'k' || userGuess == 'l' || userGuess == 'm' || userGuess == 'n' || userGuess == 'o' || userGuess == 'p' || userGuess == 'q' || userGuess == 'r' || userGuess == 's' || userGuess == 't' || userGuess == 'u' || userGuess == 'v' || userGuess == 'w' || userGuess == 'x' || userGuess == 'y' || userGuess == 'z' )) {
+      if ((contains(letters, userGuess) == false) && (contains(options, userGuess) == true)) {
 
         letters.push('' + userGuess);
         numGuesses -= 1;
