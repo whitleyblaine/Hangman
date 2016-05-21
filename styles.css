@@ -1,0 +1,32 @@
+html {
+  background: url("full-background.png");
+}
+
+#emptyDiv {
+  font-size: 26px;
+  margin: 40px 0 0 450px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 50%;
+  text-align: center;
+}
+
+#welcomeDiv {
+  font-size: 26px;
+  margin: 0 0 0 20px;
+  padding: 10px;
+  float: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 30%;
+  text-align: center;
+}
+
+#welcomeDiv span {
+  color: #FF0000;
+}
+
+#copyright {
+  font-size: 16px;
+}

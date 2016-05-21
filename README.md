@@ -1,1 +1,1 @@
-# Hangman
+# Psychic Game for RCB

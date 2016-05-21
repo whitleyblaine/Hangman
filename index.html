@@ -3,9 +3,16 @@
 <head>
   <title>Psychic Game</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
+  <div id="welcomeDiv">
+    <p>Hello and welcome to the <span>Psychic Game</span>!</p> 
+    <p>Made by Whitley Horn <br> at the Rutgers Coding Bootcamp.</p>
+    <p id="copyright">© 2016</p>
+  </div>
+
   <div id="emptyDiv">(Press 'Space' to Get Started!)</div>
 
   <script type="text/javascript">
@@ -53,11 +60,11 @@
 
       if ((contains(letters, userGuess) == false) && (userGuess == 'a' || userGuess == 'b' || userGuess == 'c' || userGuess == 'd' || userGuess == 'e' || userGuess == 'f' || userGuess == 'g' || userGuess == 'h' || userGuess == 'i' || userGuess == 'j' || userGuess == 'k' || userGuess == 'l' || userGuess == 'm' || userGuess == 'n' || userGuess == 'o' || userGuess == 'p' || userGuess == 'q' || userGuess == 'r' || userGuess == 's' || userGuess == 't' || userGuess == 'u' || userGuess == 'v' || userGuess == 'w' || userGuess == 'x' || userGuess == 'y' || userGuess == 'z' )) {
 
-        letters.push(userGuess + '');
+        letters.push('' + userGuess);
         numGuesses -= 1;
         if (userGuess == computerGuess && numGuesses > 0) {
           numWins++;
-          alert('Congratulations, the letter was ' + computerGuess + '!');
+          alert('Congratulations, the letter was ' + computerGuess.toUpperCase() + '!');
           reset();
         }
 
