@@ -38,12 +38,20 @@
       computerGuess = options[Math.floor(Math.random()*options.length)];
     };
 
+    var contains = function(arr, value) {
+      var i = arr.length;
+      while (i--) {
+        if (arr[i] === value) return true;
+      }
+      return false;
+    };
+
 
     document.onkeyup = function(event) {
 
       var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-      if (userGuess == 'a' || userGuess == 'b' || userGuess == 'c' || userGuess == 'd' || userGuess == 'e' || userGuess == 'f' || userGuess == 'g' || userGuess == 'h' || userGuess == 'i' || userGuess == 'j' || userGuess == 'k' || userGuess == 'l' || userGuess == 'm' || userGuess == 'n' || userGuess == 'o' || userGuess == 'p' || userGuess == 'q' || userGuess == 'r' || userGuess == 's' || userGuess == 't' || userGuess == 'u' || userGuess == 'v' || userGuess == 'w' || userGuess == 'x' || userGuess == 'y' || userGuess == 'z') {
+      if ((contains(letters, userGuess) == false) && (userGuess == 'a' || userGuess == 'b' || userGuess == 'c' || userGuess == 'd' || userGuess == 'e' || userGuess == 'f' || userGuess == 'g' || userGuess == 'h' || userGuess == 'i' || userGuess == 'j' || userGuess == 'k' || userGuess == 'l' || userGuess == 'm' || userGuess == 'n' || userGuess == 'o' || userGuess == 'p' || userGuess == 'q' || userGuess == 'r' || userGuess == 's' || userGuess == 't' || userGuess == 'u' || userGuess == 'v' || userGuess == 'w' || userGuess == 'x' || userGuess == 'y' || userGuess == 'z' )) {
 
         letters.push(userGuess + '');
         numGuesses -= 1;
