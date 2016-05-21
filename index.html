@@ -1,22 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hangman</title>
-    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
-  </head>
+<head>
+  <title>Psychic Game</title>
+  <meta charset="UTF-8">
+</head>
 
-  <body>
-    <header>
-      <h1>Hangman</h1>
-    </header>
-    
-    <p>Press any key to get started!</p>
-    <p>Wins: <span id="wins">0</span></p>
-    <p>Word: <span id='currentWord'></span></p>
-    <p>Guesses Remaining: <span id="guessesRemaining"></span></p>
-    <p id='lettersGuessed'>Letters already guessed: </p>
-  </body>
-</html>
+<body>
+  <div id="emptyDiv">(Press 'Space' to Get Started!)</div>
+
+  <script type="text/javascript">
+    var targetDiv = document.getElementById('emptyDiv');
+
+    var getStarted = document.createElement('div');
+    var wins = document.createElement('div');
+    var losses = document.createElement('div');
+    var guessesLeft = document.createElement('div');
+    var guesses = document.createElement('div');
+
+
+    var numWins = 0;
+    var numLosses = 0;
+    var numGuesses = 12;
+    var letters = [];
+    var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+    var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+    targetDiv.appendChild(getStarted);
+    targetDiv.appendChild(wins);
+    targetDiv.appendChild(losses);
+    targetDiv.appendChild(guessesLeft);
+    targetDiv.appendChild(guesses);
+
+    var reset = function() {
+      numGuesses = 12;
+      letters = [];
+      computerGuess = options[Math.floor(Math.random()*options.length)];
+    };
+
+
+    document.onkeyup = function(event) {
+
+      var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+      if (userGuess == 'a' || userGuess == 'b' || userGuess == 'c' || userGuess == 'd' || userGuess == 'e' || userGuess == 'f' || userGuess == 'g' || userGuess == 'h' || userGuess == 'i' || userGuess == 'j' || userGuess == 'k' || userGuess == 'l' || userGuess == 'm' || userGuess == 'n' || userGuess == 'o' || userGuess == 'p' || userGuess == 'q' || userGuess == 'r' || userGuess == 's' || userGuess == 't' || userGuess == 'u' || userGuess == 'v' || userGuess == 'w' || userGuess == 'x' || userGuess == 'y' || userGuess == 'z') {
+
+        letters.push(userGuess + '');
+        numGuesses -= 1;
+        if (userGuess == computerGuess && numGuesses > 0) {
+          numWins++;
+          alert('Congratulations, the letter was ' + computerGuess + '!');
+          reset();
+        }
+
+        else if (userGuess != computerGuess && numGuesses > 0) {
+        }
+
+        else if (userGuess != computerGuess && numGuesses <= 0) {
+          numLosses++;
+          alert('You lose! Try again?');
+          reset();
+        };
+      };
+
+      getStarted.innerHTML = '<p> Guess what letter I\'m thinking of! </p>';
+      wins.innerHTML = '<p> Wins: ' + numWins + ' </p>'
+      losses.innerHTML = '<p> Losses: ' + numLosses + ' </p>'
+      guessesLeft.innerHTML = '<p>Guesses Left: ' + numGuesses + '</p>';
+      guesses.innerHTML = '<p>Letters Guessed: ' + letters + ' </p>'
+    };
+
+
+
+  </script>
+</body>
